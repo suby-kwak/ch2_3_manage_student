@@ -7,6 +7,8 @@ public class Course {
   private final DayOfWeek dayOfWeek;
   private final Long courseTime;
 
+  // 과연 Course에 CourseInfoDTO를 인자로 받는 게 옳은가?
+  // answer : 코드 가독성이 올라가긴 하지만 의존성 역전이 일어나기 때문에 **DDD 관점으로 보면** 틀린 것으로 보인다. 생성을 해야한다면 Builder를 써보는건 어떤가 싶다.
   public Course(Student student, String courseName, int fee, DayOfWeek dayOfWeek, Long courseTime) {
     if (student == null) {
       throw new IllegalArgumentException("학생은 필수 입력값입니다.");
